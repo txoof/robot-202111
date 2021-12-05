@@ -60,7 +60,6 @@ let roll = 0
 let last_time_pitch = 0
 let last_pitch = 0
 let pitch = 0
-radio.setGroup(90)
 pins.servoWritePin(AnalogPin.P8, 90)
 pitch = 90
 last_pitch = pitch
