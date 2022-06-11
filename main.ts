@@ -44,6 +44,13 @@ function get_roll () {
     }
     return roll
 }
+input.onButtonPressed(Button.B, function () {
+    pins.servoWritePin(AnalogPin.P12, 70)
+    basic.pause(200)
+    pins.servoWritePin(AnalogPin.P12, 100)
+    basic.pause(200)
+    pins.servoWritePin(AnalogPin.P12, 90)
+})
 function rotate_lights (delay: number) {
     if (now >= last_time_light + delay) {
         strip.rotate(1)
