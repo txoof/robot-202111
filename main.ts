@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, function () {
     pins.servoWritePin(AnalogPin.P8, 90)
 })
 function get_roll () {
-    if (now >= last_time_roll + 25) {
+    if (now >= last_time_roll + 50) {
         roll = input.rotation(Rotation.Roll) + 90
         if (Math.abs(last_roll - roll) > 2) {
             roll = roll
@@ -45,11 +45,13 @@ function get_roll () {
     return roll
 }
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P12, 70)
+    pins.servoWritePin(AnalogPin.P12, 60)
     basic.pause(200)
     pins.servoWritePin(AnalogPin.P12, 100)
+    basic.pause(300)
+    pins.servoWritePin(AnalogPin.P12, 120)
     basic.pause(200)
-    pins.servoWritePin(AnalogPin.P12, 90)
+    pins.servoWritePin(AnalogPin.P12, 60)
 })
 function rotate_lights (delay: number) {
     if (now >= last_time_light + delay) {
